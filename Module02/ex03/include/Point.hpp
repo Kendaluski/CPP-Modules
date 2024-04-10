@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 09:12:33 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/09 09:19:13 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/10 06:47:15 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ class Point
 };
  
 std::ostream & operator << (std::ostream &out, const Point &point);
- 
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
+
 #endif
