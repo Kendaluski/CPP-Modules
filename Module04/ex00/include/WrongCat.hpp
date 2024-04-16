@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 06:10:18 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/16 05:40:04 by jjaen-mo         ###   ########.fr       */
+/*   Created: 2024/04/15 04:49:27 by jjaen-mo          #+#    #+#             */
+/*   Updated: 2024/04/15 05:17:17 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
- # define ICE_HPP
+#ifndef WRONGCAT_HPP
+ # define WRONGCAT_HPP
 
 # include <iostream>
-# include "AMateria.hpp"
+# include "../include/WrongAnimal.hpp"
 
-class Ice : public AMateria
+class WrongCat : public WrongAnimal
 {
-    private:
     public:
-        Ice();
-        Ice(const Ice &ice);
-        ~Ice();
-        Ice *clone() const;
-        void use(ICharacter& target);
+        WrongCat();
+        WrongCat(const WrongCat &wrongcat);
+        virtual ~WrongCat();
+        void makeSound() const;
+        WrongCat & operator = (const WrongCat &wrongcat);
 };
-
+ 
+std::ostream & operator << (std::ostream &out, const WrongCat &wrongcat);
+ 
 #endif

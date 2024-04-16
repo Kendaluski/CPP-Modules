@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:39:36 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/10 08:51:58 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/15 05:16:48 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cat : public Animal
     public:
         Cat();
         Cat(const Cat &cat);
-        ~Cat();
+        virtual ~Cat();
         void makeSound() const;
         Cat & operator = (const Cat &cat);
 };

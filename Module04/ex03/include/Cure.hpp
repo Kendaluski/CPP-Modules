@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 06:10:20 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/15 06:31:53 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/16 05:40:09 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include "AMateria.hpp"
 
-class Cure
+class Cure : public AMateria
 {
     private:
     public:
@@ -25,9 +25,6 @@ class Cure
         ~Cure();
         Cure *clone() const;
         void use(ICharacter& target);
-        Cure & operator = (const Cure &cure);
 };
- 
-std::ostream & operator << (std::ostream &out, const Cure &cure);
  
 #endif

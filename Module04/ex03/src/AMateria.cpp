@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 06:03:15 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/15 06:07:31 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/16 05:42:33 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,6 @@ void AMateria::use(ICharacter &target)
 AMateria & AMateria::operator = (const AMateria &amateria)
 {
     std::cout << "Copy operator called" << std::endl;
-    this->_type = amateria._type;
+    *this = amateria;
     return (*this);
-}
-
-std::ostream &operator<<(std::ostream &out, const AMateria &amateria)
-{
-    out << "AMateria [" << "" << "]";
-    return (out);
 }
