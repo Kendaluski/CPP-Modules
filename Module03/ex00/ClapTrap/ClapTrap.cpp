@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:43:24 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/29 15:43:25 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:49:47 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name)
     std::cout << "Default constructor called" << std::endl;
     _hitpoints = 10;
     _energyPoints = 10;
-    _attackDamage = 10;
+    _attackDamage = 0;
 }
 
 ClapTrap::~ClapTrap()

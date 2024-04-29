@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+         #
+#    By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 11:05:15 by jjaen-mo          #+#    #+#              #
-#    Updated: 2024/04/10 07:56:05 by jjaen-mo         ###   ########.fr        #
+#    Updated: 2024/04/29 15:54:05 by jjaen-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fragtrap
+NAME = frag
 FILES = $(shell find . -name "*.cpp")
 OBJS = $(FILES:.cpp=.o)
 GREEN=\033[0;32m

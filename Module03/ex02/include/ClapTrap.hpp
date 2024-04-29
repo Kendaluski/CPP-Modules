@@ -7,9 +7,9 @@ class ClapTrap
 {
     protected:
         std::string _name;
-        unsigned int _hitpoints = 10;
-        unsigned int _energyPoints = 10;
-        unsigned int _attackDamage = 10;
+        unsigned int _hitpoints;
+        unsigned int _energyPoints;
+        unsigned int _attackDamage;
     public:
         ClapTrap(std::string name);
         void attack(std::string const & target);

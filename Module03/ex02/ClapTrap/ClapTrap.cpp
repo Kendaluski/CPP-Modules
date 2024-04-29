@@ -3,6 +3,9 @@
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {
     std::cout << "Default constructor called with name: " << name << std::endl;
+    _hitpoints = 10;
+    _energyPoints = 10;
+    _attackDamage = 0;
 }
 
 ClapTrap::~ClapTrap()
