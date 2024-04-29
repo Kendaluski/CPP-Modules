@@ -1,8 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/29 15:43:24 by jjaen-mo          #+#    #+#             */
+/*   Updated: 2024/04/29 15:43:25 by jjaen-mo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/ClapTrap.hpp"
  
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {
     std::cout << "Default constructor called" << std::endl;
+    _hitpoints = 10;
+    _energyPoints = 10;
+    _attackDamage = 10;
 }
 
 ClapTrap::~ClapTrap()

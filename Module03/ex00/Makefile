@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+         #
+#    By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 11:05:15 by jjaen-mo          #+#    #+#              #
-#    Updated: 2024/04/10 06:53:53 by jjaen-mo         ###   ########.fr        #
+#    Updated: 2024/04/29 15:45:25 by jjaen-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = claptrap
+NAME = clap
 FILES = $(shell find . -name "*.cpp")
 OBJS = $(FILES:.cpp=.o)
 GREEN=\033[0;32m
@@ -34,4 +34,4 @@ clean:
 
 re: fclean $(NAME)
 
-.PHONY: clean fclean
+.PHONY: clean fclean re
