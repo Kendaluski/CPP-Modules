@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+         #
+#    By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 08:28:18 by jjaen-mo          #+#    #+#              #
-#    Updated: 2024/04/10 08:54:55 by jjaen-mo         ###   ########.fr        #
+#    Updated: 2024/04/29 18:01:18 by jjaen-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animal
+NAME = animals
 FILES = $(shell find . -name "*.cpp")
 OBJS = $(FILES:.cpp=.o)
 GREEN=\033[0;32m
@@ -18,7 +18,7 @@ RED=\033[0;31m
 END=\033[0m
 
 $(NAME): $(OBJS)
-	@c++ -Wall -Wextra -Werror $(FILES) -o $(NAME)
+	@c++ -Wall -Wextra -Werror $(FILES) -o $(NAME) -fsanitize=address
 	@echo "$(GREEN) Program compiled! $(END)"
 
 $(OBJS): $(FILES)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:46:40 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/15 05:48:33 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:01:08 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include "include/WrongAnimal.hpp"
 #include "include/WrongCat.hpp"
 
-void ft_leaks()
-{
-    system("leaks -q animal");
-}
+// void ft_leaks()
+// {
+//     system("leaks -q animal");
+// }
 
 int main()
 {
@@ -29,7 +29,7 @@ int main()
     const WrongAnimal* wrongmeta = new WrongAnimal();
     const WrongAnimal* wrongj = new WrongCat();
     
-    atexit(ft_leaks);
+    // atexit(ft_leaks);
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     std::cout << wrongj->getType() << " " << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:46:40 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/15 05:58:41 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:17:53 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void ft_leaks()
 {
-    system("leaks -q ideas");
+    system("leaks -q abstract");
 }
 
 int main()

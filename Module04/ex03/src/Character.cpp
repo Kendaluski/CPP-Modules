@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 04:47:21 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/16 06:34:36 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:28:21 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ void Character::equip(AMateria *m)
 void Character::unequip(int idx)
 {
     if(idx >= 0 && idx < 4)
+    {
+        std::cout << "Unequipped Material: " << this->_inv[idx]->getType() << "[" << idx << "]" << std::endl;
         this->_inv[idx] = NULL;
+    }
     else
         std::cout << "Unable to unequip, index not in inventory" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:39:37 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/15 05:35:50 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:21:48 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Cat::Cat(const Cat &cat) : Animal()
 Cat::~Cat()
 {
     std::cout << "Cat destructor called" << std::endl;
+    delete this->brain;
 }
 
 Cat & Cat::operator = (const Cat &cat)

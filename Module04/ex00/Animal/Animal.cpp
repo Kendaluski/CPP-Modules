@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:31:03 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/15 05:08:51 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:08:06 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ std::string Animal::getType() const
 
 void Animal::makeSound() const
 {
-    std::cout << "Animal sound" << std::endl;
+    if(this->type.empty())
+        return ;
 }
 
 void Animal::setType(std::string type)

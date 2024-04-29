@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 05:59:57 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/16 06:35:14 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:28:46 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ int main()
     me->use(2, *bob);
     me->use(3, *bob);
     me->use(4, *bob);
+    me->unequip(0);
+    me->unequip(15);
+    me->use(0, *bob);
     delete bob;
     delete me;
     delete src;
