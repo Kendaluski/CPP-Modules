@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:46:40 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/29 18:01:08 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:34:01 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 // void ft_leaks()
 // {
-//     system("leaks -q animal");
+//     system("leaks -q animals");
 // }
 
 int main()
@@ -29,7 +29,7 @@ int main()
     const WrongAnimal* wrongmeta = new WrongAnimal();
     const WrongAnimal* wrongj = new WrongCat();
     
-    // atexit(ft_leaks);
+    //atexit(ft_leaks);
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     std::cout << wrongj->getType() << " " << std::endl;

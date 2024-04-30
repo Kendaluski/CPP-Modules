@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 05:59:57 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/29 18:28:46 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:40:19 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include "../include/Ice.hpp"
 #include "../include/Cure.hpp"
 
-void ft_leaks(void)
-{
-    system("leaks -q interfaces");
-}
+// void ft_leaks(void)
+// {
+//     system("leaks -q interfaces");
+// }
 
 int main()
 {
-    atexit(ft_leaks);
+    // atexit(ft_leaks);
     IMateriaSource *src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());

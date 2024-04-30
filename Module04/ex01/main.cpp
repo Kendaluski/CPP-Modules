@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:46:40 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/29 18:13:14 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:35:37 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include "include/Cat.hpp"
 #include "include/Brain.hpp"
 
-void ft_leaks()
-{
-    system("leaks -q ideas");
-}
+// void ft_leaks()
+// {
+//     system("leaks -q ideas");
+// }
 
 int main()
 {
     Animal *animals[4];
     
-    atexit(ft_leaks);
+    // atexit(ft_leaks);
     for(int i = 0; i < 4; i++)
     {
         if(i % 2 == 0)

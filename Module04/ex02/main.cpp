@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:46:40 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/04/29 18:17:53 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:39:32 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 #include "include/Cat.hpp"
 #include "include/Brain.hpp"
 
-void ft_leaks()
-{
-    system("leaks -q abstract");
-}
+// void ft_leaks()
+// {
+//     system("leaks -q abstract");
+// }
 
 int main()
 {
     Cat *cat = new Cat();
     Dog *dog = new Dog();
+    // Animal *animal = new Animal();
     
-    atexit(ft_leaks);
+    // atexit(ft_leaks);
     cat->makeSound();
     dog->makeSound();
     delete cat;

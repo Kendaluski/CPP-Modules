@@ -6,7 +6,7 @@
 #    By: jjaen-mo <jjaen-mo@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 08:28:18 by jjaen-mo          #+#    #+#              #
-#    Updated: 2024/04/29 18:01:18 by jjaen-mo         ###   ########.fr        #
+#    Updated: 2024/04/30 12:33:33 by jjaen-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RED=\033[0;31m
 END=\033[0m
 
 $(NAME): $(OBJS)
-	@c++ -Wall -Wextra -Werror $(FILES) -o $(NAME) -fsanitize=address
+	@c++ -Wall -Wextra -Werror $(FILES) -o $(NAME)
 	@echo "$(GREEN) Program compiled! $(END)"
 
 $(OBJS): $(FILES)
