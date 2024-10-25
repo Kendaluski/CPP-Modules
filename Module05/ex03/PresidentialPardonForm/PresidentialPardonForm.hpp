@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 04:46:12 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/10/25 13:30:22 by jjaen-mo         ###   ########.fr       */
+/*   Created: 2024/10/25 12:39:17 by jjaen-mo          #+#    #+#             */
+/*   Updated: 2024/10/25 12:40:29 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
- # define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+ # define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
-# include <fstream>
 # include "../AForm/AForm.hpp"
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	private:
 		std::string _target;
 	public:
-		ShrubberyCreationForm(std::string target);
+		PresidentialPardonForm(std::string target);
 		const std::string &getTarget() const;
-		~ShrubberyCreationForm();
+		~PresidentialPardonForm();
 
 		void execute(Bureaucrat const &executor) const;
 };
  
-std::ostream & operator << (std::ostream &out, const ShrubberyCreationForm &shrubberycreationform);
+std::ostream & operator << (std::ostream &out, const PresidentialPardonForm &presidentialpardonform);
  
 #endif
