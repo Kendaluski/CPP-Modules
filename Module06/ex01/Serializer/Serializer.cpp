@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 07:53:04 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/10/31 08:54:44 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/05 17:35:09 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ Serializer::~Serializer()
 Serializer & Serializer::operator = (const Serializer &Serializer)
 {
 	std::cout << "Serialier copy operator called" << std::endl;
+	if(this == &Serializer)
+		return (*this);
 	this->Serializer::operator=(Serializer);
 	return (*this);
 }
