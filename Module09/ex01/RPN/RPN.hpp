@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 18:01:37 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/11/06 18:35:13 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/07 09:54:49 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@
 # define BLUE "\033[34m"
 # define RESET "\033[0m"
 
+# define PMASK 4194304
+# define SMASK 8388608
+# define MMASK 16777216
+# define DMASK 33554432
+
 class RPN
 {
 	private:
@@ -39,9 +44,10 @@ class RPN
 		~RPN();
 		RPN & operator = (const RPN &rpn);
 
-		void fillStack(int argc, char **argv);
+		bool fillStack(int argc, char **argv);
 		void printStack();
-		float operate(float a, float b, char op);
+		void calculate();
+		float operate(float a, float b, float op);
 };
  
 std::ostream & operator << (std::ostream &out, const RPN &rpn);

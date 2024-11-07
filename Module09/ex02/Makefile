@@ -6,11 +6,11 @@
 #    By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/01 08:00:21 by jjaen-mo          #+#    #+#              #
-#    Updated: 2024/11/07 09:52:20 by jjaen-mo         ###   ########.fr        #
+#    Updated: 2024/11/07 10:06:40 by jjaen-mo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = rpn
+NAME = pmergeme
 FILES = $(shell find . -name "*.cpp")
 OBJS = $(FILES:.cpp=.o)
 GREEN=\033[0;32m
