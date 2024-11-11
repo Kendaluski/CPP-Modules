@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:07:03 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/11/07 11:26:27 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/11 12:06:17 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <deque>
 # include <cstdlib>
 # include <algorithm>
+# include <ctime>
+# include <cstring>
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
@@ -36,6 +38,8 @@ class PmergeMe
 	private:
 		std::vector<int> _vector;
 		std::deque<int> _deque;
+		double _vTime;
+		double _dTime;
 	public:
 		PmergeMe(int argc, char **argv);
 		PmergeMe(const PmergeMe &pmergeme);
@@ -48,12 +52,27 @@ class PmergeMe
 				virtual const char *what() const throw();
 		};
 
+		class CharException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class DuplicateException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
 		void printVector(std::vector<int> vector);
 		std::vector<int> getVector() const;
 		std::vector<int> sortVector(std::vector<int> vector);
-		void printDeque(std::deque<int> deque);
+		void printDeque();
 		std::deque<int> getDeque() const;
-		std::deque<int> sortDeque(std::deque<int> deque);
+		void sortDeque();
+		double getVTime() const;
+		double getDTime() const;
+		void setVTime(double vTime);
 };
  
 std::ostream & operator << (std::ostream &out, const PmergeMe &pmergeme);
