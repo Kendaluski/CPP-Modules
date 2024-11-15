@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:34:17 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/11/06 16:33:51 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:23:30 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define BLACK "\033[30m"
 # define BLUE "\033[34m"
 # define RESET "\033[0m"
+
 
 class BitcoinExchange
 {

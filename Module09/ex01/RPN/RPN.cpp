@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 18:01:38 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/11/07 09:55:12 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:41:38 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,6 @@ void RPN::printStack()
 	std::cout << RESET;
 }
 
-float operate(float a, float b, char op)
-{
-	if (op == '+')
-		return (a + b);
-	if (op == '-')
-		return (a - b);
-	if (op == '*')
-		return (a * b);
-	if (op == '/')
-		return (a / b);
-	return (0);
-}
-
 bool RPN::fillStack(int argc, char **argv)
 {
 	std::cout << MAGENTA << "Filling stack from input..." << RESET << std::endl;
@@ -112,6 +99,11 @@ bool RPN::fillStack(int argc, char **argv)
 
 float RPN::operate(float a, float b, float op)
 {
+	if(op == DMASK && b == 0)
+	{
+		std::cerr << RED << "[ERROR] Division by zero" << RESET << std::endl;
+		return (0);
+	}
 	if (op == PMASK)
 		return (a + b);
 	if (op == SMASK)

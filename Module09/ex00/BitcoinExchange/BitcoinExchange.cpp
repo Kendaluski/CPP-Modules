@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:34:59 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/11/06 17:59:06 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:22:51 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@ BitcoinExchange::BitcoinExchange(std::string filename)
 	std::ifstream file;
 	
 	file.open(filename.c_str());
-	if (!file.is_open())
-		throw std::invalid_argument( RED "[ERROR] File not found" RESET);
-	
+	try
+	{
+		if(!file.is_open())
+			throw std::invalid_argument( RED "[ERROR] File not found" RESET);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	std::cout << MAGENTA << "Data file opened, storing data..." << RESET << std::endl;
 	std::string line;
 	while (std::getline(file, line))
@@ -30,8 +36,15 @@ BitcoinExchange::BitcoinExchange(std::string filename)
 		_data[key] = std::strtof(value.c_str(), NULL);
 	}
 	file.close();
-	if(_data.size() == 0)
-		throw std::invalid_argument( RED "[ERROR] Empty file" RESET);
+	try
+	{
+		if(_data.size() == 0)
+			throw std::invalid_argument( RED "[ERROR] Empty data file" RESET);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	std::cout << CYAN << "Data stored" << RESET << std::endl;
 }
 
@@ -71,14 +84,39 @@ void BitcoinExchange::printData()
 	std::cout << RESET;
 }
 
+bool thereAreChars(std::string key)
+{
+	for (size_t i = 0; i < key.size(); i++)
+	{
+		if(!std::isdigit(key[i]) && key[i] != '-' && key[i] != '0')
+			return true;
+	}
+	return false;
+}
+
 void BitcoinExchange::convertInput(std::string input)
 {
 	std::ifstream file;
 
 	file.open(input.c_str());
-	if(!file.is_open())
-		throw std::invalid_argument( RED "[ERROR] File not found" RESET);
-	
+	try
+	{
+		if(!file.is_open())
+			throw std::invalid_argument( RED "[ERROR] File not found" RESET);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		if(file.peek() == std::ifstream::traits_type::eof())
+			throw std::invalid_argument( RED "[ERROR] Empty file" RESET);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	std::cout << MAGENTA << "Input file opened, converting data..." << RESET << std::endl;
 	
 	std::string line;
@@ -103,6 +141,21 @@ void BitcoinExchange::convertInput(std::string input)
 		if(value.find("-") != std::string::npos)
 		{
 			std::cerr << ORANGE << "[ERROR] Negative value introduced" << RESET << std::endl;
+			continue;
+		}
+		if(value.empty())
+		{
+			std::cerr << ORANGE << "[ERROR] No value introduced" << RESET << std::endl;
+			continue;
+		}
+		if(thereAreChars(key))
+		{
+			std::cerr << ORANGE << "[ERROR] Invalid key introduced" << RESET << std::endl;
+			continue;
+		}
+		if(key.empty() || key.size() != 10)
+		{
+			std::cerr << ORANGE << "[ERROR] No key introduced" << RESET << std::endl;
 			continue;
 		}
 		if(std::strtof(value.c_str(), NULL) > 1000)

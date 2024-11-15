@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:07:06 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/11/11 12:11:50 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:56:00 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,27 @@ PmergeMe::PmergeMe(int argc, char **argv)
 	std::cout << MAGENTA << "Filling vector and deque with arguments..." << RESET << RED << std::endl;
 	for (int i = 1; i < argc; i++)
 	{
-		if (thereAreChar(argv[i]) == true)
-			throw CharException();
-		if (std::atoi(argv[i]) < 0)
-			throw NegativeNumberException();
+		try
+		{
+			if (thereAreChar(argv[i]) == true)
+				throw CharException();	
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		try
+		{
+			if (std::atoi(argv[i]) < 0)
+				throw NegativeNumberException();	
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 		_vector.push_back(std::atoi(argv[i]));
 		_deque.push_back(std::atoi(argv[i]));
 	}
-	if (thereAreDuplicates(_vector) == true)
-		throw DuplicateException();
 	std::cout << RESET << MAGENTA << "Vector and deque filled" << RESET << std::endl;
 }
 
@@ -97,7 +109,7 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &pmergeme)
 
 std::ostream &operator<<(std::ostream &out, const PmergeMe &pmergeme)
 {
-	out << "PmergeMe [" << pmergeme << "]";
+	out << "PmergeMe [" << &pmergeme << "]";
 	return (out);
 }
 
