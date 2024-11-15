@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:20:15 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/10/31 10:36:18 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:41:10 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 	v.push_back(5);
 
 	easyfind(v, 3);
-	easyfind(v, 10);
+	easyfind(v, 1);
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:44:48 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/10/31 11:04:02 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:53:05 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,12 @@ int Span::shortestSpan()
 	
 	std::vector<int> tmp = _array;
 	std::sort(tmp.begin(), tmp.end());
-	int min = tmp[1] - tmp[0];
 	
-	for(unsigned int i = 1; i < tmp.size(); i++)
-	{
-		if (tmp[i] - tmp[i - 1] < min)
-			min = tmp[i] - tmp[i - 1];
-	}
-	return (min);
+	std::vector<int> diffs(tmp.size() - 1);
+	std::adjacent_difference(tmp.begin(), tmp.end(), diffs.begin());
+	diffs.erase(diffs.begin());
+	
+	return (std::min_element(diffs.begin(), diffs.end())[0]);
 }
 
 int Span::longestSpan()
@@ -63,9 +61,10 @@ int Span::longestSpan()
 	if(_array.size() <= 1)
 		throw std::runtime_error(RED "[ERROR] Span is empty or has only one element" RESET);
 		
-	std::vector<int> tmp = _array;
-	std::sort(tmp.begin(), tmp.end());
-	return (tmp[tmp.size() - 1] - tmp[0]);
+	std::pair<std::vector<int>::iterator, std::vector<int>::iterator> res;
+	res.first = std::min_element(_array.begin(), _array.end());
+	res.second = std::max_element(_array.begin(), _array.end());
+	return (*res.second - *res.first);
 }
 
 void Span::fillVector(void)

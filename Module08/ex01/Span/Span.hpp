@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:44:46 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/10/31 11:00:10 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:46:07 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <vector>
 # include <exception>
 # include <algorithm>
+# include <numeric>
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
