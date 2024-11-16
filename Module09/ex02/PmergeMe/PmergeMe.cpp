@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:07:06 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/11/15 18:56:00 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/16 18:06:55 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ bool	thereAreDuplicates(std::vector<int> vector)
 	return (false);
 }
 
+int PmergeMe::getSize(void)
+{
+	return (_vector.size());
+}
+
 PmergeMe::PmergeMe(int argc, char **argv)
 {
 	std::cout << GREEN << "PmergeMe default constructor called" << RESET << std::endl;
@@ -69,15 +74,24 @@ PmergeMe::PmergeMe(int argc, char **argv)
 		}
 		try
 		{
-			if (std::atoi(argv[i]) < 0)
-				throw NegativeNumberException();	
+			if (std::atoi(argv[i]) < 0 || argv[i][0] == '-')
+			{
+				_vector.clear();
+				_deque.clear();
+				break;
+				throw NegativeNumberException();
+			}
+			else
+			{
+				_vector.push_back(std::atoi(argv[i]));
+				_deque.push_back(std::atoi(argv[i]));
+			}
 		}
 		catch(const std::exception& e)
 		{
+			std::cout << "test" << std::endl;
 			std::cerr << e.what() << '\n';
 		}
-		_vector.push_back(std::atoi(argv[i]));
-		_deque.push_back(std::atoi(argv[i]));
 	}
 	std::cout << RESET << MAGENTA << "Vector and deque filled" << RESET << std::endl;
 }

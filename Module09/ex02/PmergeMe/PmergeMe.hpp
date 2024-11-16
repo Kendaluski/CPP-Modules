@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:07:03 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/11/11 12:06:17 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/16 18:01:37 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ class PmergeMe
 		void sortDeque();
 		double getVTime() const;
 		double getDTime() const;
+		int getSize(void);
 		void setVTime(double vTime);
 };
  

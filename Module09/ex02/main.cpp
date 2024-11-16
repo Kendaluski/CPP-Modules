@@ -6,7 +6,7 @@
 /*   By: jjaen-mo <jjaen-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:06:52 by jjaen-mo          #+#    #+#             */
-/*   Updated: 2024/11/11 11:54:39 by jjaen-mo         ###   ########.fr       */
+/*   Updated: 2024/11/16 18:01:24 by jjaen-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ int main(int argc, char **argv)
 	
 	std::vector<int> vector = pmergeme.getVector();
 	
+	if(pmergeme.getSize() <= 1)
+	{
+		return 0;
+	}
 	std::cout << GREEN << "Before: " << RESET;
 	pmergeme.printVector(vector);
 	std::cout << GREEN << "After: " << RESET;
